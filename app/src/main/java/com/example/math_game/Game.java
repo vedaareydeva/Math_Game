@@ -88,10 +88,10 @@ public class Game extends AppCompatActivity {
         realans = num1+num2;
 
         question.setText(num1 + "+" + num2);
-        timer();
+        startTimer();
     }
 
-    public void timer(){
+    public void startTimer(){
         timer = new CountDownTimer(time_left_in_milis, 1000) {
             @Override
             public void onTick(long milisUntilFinished) {
@@ -108,7 +108,7 @@ public class Game extends AppCompatActivity {
                 pauseTimer();
                 resetTimer();
                 updateText();
-                userlife -= 1;
+                userlife = userlife - 1;
                 life.setText(""+userlife);
                 question.setText("Time's up!");
 
