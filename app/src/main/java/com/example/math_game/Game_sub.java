@@ -14,7 +14,8 @@ import android.widget.Toast;
 import java.util.Locale;
 import java.util.Random;
 
-public class Game extends AppCompatActivity {
+
+public class Game_sub extends AppCompatActivity {
 
     TextView score;
     TextView life;
@@ -38,7 +39,7 @@ public class Game extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game);
+        setContentView(R.layout.activity_game_sub);
 
         score = findViewById(R.id.textViewScore);
         life = findViewById(R.id.textViewLife);
@@ -63,14 +64,13 @@ public class Game extends AppCompatActivity {
                     question.setText("Congrats, your answer is correct!");
                 }
                 else{
-                        userlife -= 1;
-                        life.setText(""+userlife);
-                        question.setText("Oops! That was incorrect :(");
+                    userlife -= 1;
+                    life.setText(""+userlife);
+                    question.setText("Oops! That was incorrect :(");
                 }
 
             }
         });
-
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,7 +80,7 @@ public class Game extends AppCompatActivity {
 
                 if(userlife <= 0){
                     Toast.makeText(getApplicationContext(),"Game Over", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(Game.this, Result.class);
+                    Intent intent = new Intent(Game_sub.this, Result.class);
                     intent.putExtra("score",userscore);
                     startActivity(intent);
                     finish();
@@ -95,11 +95,11 @@ public class Game extends AppCompatActivity {
     public void quesGen(){
 
         num1 = random.nextInt(100);
-        num2 = random.nextInt(100);
+        num2 = random.nextInt(50);
 
-        realans = num1+num2;
+        realans = num1-num2;
 
-        question.setText(num1 + "+" + num2);
+        question.setText(num1 + "-" + num2);
         startTimer();
     }
 

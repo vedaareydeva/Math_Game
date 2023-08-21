@@ -31,5 +31,15 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        subtraction.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this, Game_sub.class);
+                startActivity(intent);
+
+            }
+        });
     }
 }
