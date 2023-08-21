@@ -41,5 +41,15 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        multiplication.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this, Game_mul.class);
+                startActivity(intent);
+
+            }
+        });
     }
 }

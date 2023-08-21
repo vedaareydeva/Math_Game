@@ -41,7 +41,7 @@ public class Game_sub extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_sub);
 
-        score = findViewById(R.id.textViewScore);
+        score = findViewById(R.id.textViewScores);
         life = findViewById(R.id.textViewLife);
         time = findViewById(R.id.textViewTime);
         question = findViewById(R.id.textViewQues);
